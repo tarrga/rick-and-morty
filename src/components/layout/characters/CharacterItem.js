@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useGithub } from '../../context/github/GithunbContext';
+import { useRickMorty } from '../../context/rickMorty/RickMortyContext';
 import Spinner from '../Spinner';
 
 export default function CharacterItem({ character }) {
   const { id, name, image } = character;
-  const { loading, fetchError } = useGithub();
+  const { loading, fetchError } = useRickMorty();
 
   if (!loading && !fetchError) {
     return (

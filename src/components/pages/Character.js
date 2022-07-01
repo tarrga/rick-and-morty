@@ -1,13 +1,13 @@
-import { FaCode, FaCodepen, FaStore, FaUserFriends, FaUsers, FaT } from 'react-icons/fa';
+import { FaUsers } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import EpisodeList from '../layout/episodes/EpisodeList';
 import Spinner from '../layout/Spinner';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useGithub } from '../context/github/GithunbContext';
+import { useRickMorty } from '../context/rickMorty/RickMortyContext';
 
 export default function Character() {
-  const { getCharacter, character, loading } = useGithub();
+  const { getCharacter, character, loading } = useRickMorty();
   const params = useParams();
 
   useEffect(() => {

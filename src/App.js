@@ -6,13 +6,13 @@ import About from './components/pages/About';
 import NotFound from './components/pages/NotFound';
 import Alert from './components/layout/Alert';
 import Character from './components/pages/Character';
-import { GithubProvider } from './components/context/github/GithunbContext';
+import { RickMortyProvider } from './components/context/rickMorty/RickMortyContext';
 import { AlertProvider } from './components/context/alert/AlertContext';
 import Episode from './components/pages/Episode';
 
 function App() {
   return (
-    <GithubProvider>
+    <RickMortyProvider>
       <AlertProvider>
         <BrowserRouter basename={process.env.PUBLIC_URL}>
           <div className='flex flex-col justify-between h-screen'>
@@ -32,7 +32,7 @@ function App() {
           </div>
         </BrowserRouter>
       </AlertProvider>
-    </GithubProvider>
+    </RickMortyProvider>
   );
 }
 

@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { useGithub } from '../../context/github/GithunbContext';
+import { useRickMorty } from '../../context/rickMorty/RickMortyContext';
 import { useAlert } from '../../context/alert/AlertContext';
 
 export default function CharacterSearch() {
-  const { characters, searchCharacters, deleteCharacters } = useGithub();
+  const { characters, searchCharacters, deleteCharacters } = useRickMorty();
   const { setAlert } = useAlert();
 
   const [text, setText] = useState('');

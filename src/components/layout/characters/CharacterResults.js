@@ -1,12 +1,11 @@
-import { useEffect } from 'react';
 import Spinner from '../Spinner';
 import FetchError from '../../pages/FetchError';
 import CharacterItem from './CharacterItem';
-import { useGithub } from '../../context/github/GithunbContext';
+import { useRickMorty } from '../../context/rickMorty/RickMortyContext';
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 
 export default function CharacterResults() {
-  const { characters, loading, fetchError, searchInfo, searchCharacters, currentPage } = useGithub();
+  const { characters, loading, fetchError, searchInfo, searchCharacters, currentPage } = useRickMorty();
   const { prev, next, pages } = searchInfo;
 
   // console.log(currentPage);

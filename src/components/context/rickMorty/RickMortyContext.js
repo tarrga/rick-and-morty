@@ -1,9 +1,9 @@
 import { createContext, useState, useContext, useReducer } from 'react';
-import githubReducer from '../github/GithubReducer';
+import rickMortyReducer from '../rickMorty/RickMortyReducer';
 
-const GithubContext = createContext();
+const RickMortyContext = createContext();
 
-const GithubProvider = (props) => {
+const RickMortyProvider = (props) => {
   // const [users, setUsers] = useState([]);
   // const [loading, setLoading] = useState(true);
   const initialState = {
@@ -19,7 +19,7 @@ const GithubProvider = (props) => {
     fetchError: false,
   };
 
-  const [state, dispatch] = useReducer(githubReducer, initialState);
+  const [state, dispatch] = useReducer(rickMortyReducer, initialState);
 
   // get search results
   const searchCharacters = async (page = 1, name = '', status = '', url = '') => {
@@ -87,7 +87,7 @@ const GithubProvider = (props) => {
   const deleteCharacters = () => dispatch({ type: 'deleteCharacters' });
 
   return (
-    <GithubContext.Provider
+    <RickMortyContext.Provider
       value={{
         characters: state.characters,
         search: state.search,
@@ -109,10 +109,10 @@ const GithubProvider = (props) => {
   );
 };
 
-const useGithub = () => {
-  const context = useContext(GithubContext);
+const useRickMorty = () => {
+  const context = useContext(RickMortyContext);
   if (!context) throw new Error('Not inside of provider');
   return context;
 };
 
-export { GithubProvider, useGithub };
+export { RickMortyProvider, useRickMorty };

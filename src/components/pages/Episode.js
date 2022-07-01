@@ -1,4 +1,4 @@
-import { useGithub } from '../context/github/GithunbContext';
+import { useRickMorty } from '../context/rickMorty/RickMortyContext';
 import { RiMovie2Fill } from 'react-icons/ri';
 import { useParams, Link } from 'react-router-dom';
 import Spinner from '../layout/Spinner';
@@ -7,7 +7,7 @@ import { FaUsers } from 'react-icons/fa';
 import CharacterItem from '../layout/characters/CharacterItem';
 
 export default function Episode() {
-  const { getEpisode, episode, loading, episodeCharacters, getCharacter, episodeCharactersObjects } = useGithub();
+  const { getEpisode, episode, loading, episodeCharacters, getCharacter, episodeCharactersObjects } = useRickMorty();
   const { name, air_date, characters } = episode;
   const { id } = useParams();
 

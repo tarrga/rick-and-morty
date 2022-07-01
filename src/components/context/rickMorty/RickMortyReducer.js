@@ -1,4 +1,4 @@
-const githubReducer = (state, action) => {
+const rickMortyReducer = (state, action) => {
   switch (action.type) {
     case 'getCharactersSearch': {
       return {
@@ -38,4 +38,4 @@ const githubReducer = (state, action) => {
   }
 };
 
-export default githubReducer;
+export default rickMortyReducer;
