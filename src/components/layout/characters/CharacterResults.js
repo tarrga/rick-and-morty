@@ -8,11 +8,6 @@ export default function CharacterResults() {
   const { characters, loading, fetchError, searchInfo, searchCharacters, currentPage } = useRickMorty();
   const { prev, next, pages } = searchInfo;
 
-  // console.log(currentPage);
-  // useEffect(() => {
-  //   fetchUsers();
-  // }, []);
-
   if (!loading && !fetchError) {
     return (
       <>
@@ -25,7 +20,7 @@ export default function CharacterResults() {
           <div className='flex items-center justify-evenly w-6/12 m-auto mt-14'>
             <button
               type='button'
-              onClick={() => prev !== null && searchCharacters('', '', '', prev)}
+              onClick={() => prev !== null && searchCharacters('', '', prev)}
               className='text-white bg-gray-800 hover:bg-gray-900 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700'
             >
               <FaChevronLeft />
@@ -35,7 +30,7 @@ export default function CharacterResults() {
             </span>
             <button
               type='button'
-              onClick={() => next !== null && searchCharacters('', '', '', next)}
+              onClick={() => next !== null && searchCharacters('', '', next)}
               className='text-white bg-gray-800 hover:bg-gray-900 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700'
             >
               <FaChevronRight />

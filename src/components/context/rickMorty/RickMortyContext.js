@@ -4,8 +4,6 @@ import rickMortyReducer from '../rickMorty/RickMortyReducer';
 const RickMortyContext = createContext();
 
 const RickMortyProvider = (props) => {
-  // const [users, setUsers] = useState([]);
-  // const [loading, setLoading] = useState(true);
   const initialState = {
     search: '',
     characters: [],
@@ -22,9 +20,9 @@ const RickMortyProvider = (props) => {
   const [state, dispatch] = useReducer(rickMortyReducer, initialState);
 
   // get search results
-  const searchCharacters = async (page = 1, name = '', status = '', url = '') => {
+  const searchCharacters = async (page = 1, name = '', url = '') => {
     if (url === '') {
-      url = `https://rickandmortyapi.com/api/character/?page=${page}&name=${name}&status=${status}`;
+      url = `https://rickandmortyapi.com/api/character/?page=${page}&name=${name}`;
     }
     try {
       setLoading();
